@@ -5,17 +5,32 @@ async function getItem() {
   const itemLength = Object.keys(data).length;
 
   const text = document.getElementById("input1").value;
-  const needle = text;
+  let needle = text;
 
   //search function
-  for (var key in data) {
+  for (let key in data) {
     if (data.hasOwnProperty(key)) {
       if (data[key].name == needle) {
         console.log("found");
         console.log(data[key].name);
-        break;
+        //turning our data to html element
+        var node = document.createTextNode(needle);
+        document.body.appendChild(node);
+        //space
+        var space = document.createTextNode("  ");
+        document.body.appendChild(space);
+        //cost
+        needle = data[key].cost;
+        var node = document.createTextNode(needle);
+        document.body.appendChild(node);
       }
     }
   }
 }
 location.reload;
+
+function removeText() {
+  var elem = document.getElementById("node");
+  elem.parentNode.removeChild(elem);
+  return false;
+}
