@@ -2,11 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Api Test</title>
   </head>
   <input type="text" id="input1" />
-  <button onclick="getItem()"></button>
+  <button id="btn1" onclick="getItem()">Search</button>
+  <form onsubmit="return removeText(); ">
+    <input type="submit" value="Remove Text" />
+  </form>
   <body>
     <p></p>
     <script src="fetch.js"></script>
