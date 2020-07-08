@@ -19,8 +19,8 @@ async function getItem() {
         //space
         var space = document.createTextNode("  ");
         document.body.appendChild(space);
-        //cost
-        needle = data[key].cost;
+        //buy limit
+        needle = data[key].buy_limit;
         var node = document.createTextNode(needle);
         document.body.appendChild(node);
       }
